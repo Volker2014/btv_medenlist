@@ -1,5 +1,5 @@
 {
-    "name":"Volker2014/btv_medenlist",
+    "name":"volker2014/btv_medenlist",
     "description":"BTV Medenspiele",
     "keywords":["contao", "btv", "meden", "spiele"],
     "type":"contao-module",
@@ -13,8 +13,8 @@
         }
     ],
     "support":{
-        "issues":"https://github.com/Volker2014/btv_medenlist/issues",
-        "source":"https://github.com/Volker2014/btv_medenlist"
+        "issues":"https://github.com/volker2014/btv_medenlist/issues",
+        "source":"https://github.com/volker2014/btv_medenlist"
     },
     "require":{
         "php":">=5.3",
