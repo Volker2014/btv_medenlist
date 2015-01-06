@@ -1,0 +1,67 @@
+<div class="ce_accordionStart ce_accordion block">
+<div class="toggler"><?php echo $this->mannschaft['liga']; ?></div>
+<div class="accordion">
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div><h2><a href="http://www.btv.de/<?php echo $this->mannschaft['link']; ?>" target="_blank"><?php echo $this->mannschaft['liga']; ?></a></h2></div>
+	<div>
+		<table class="ce_table">
+			<thead>
+				<tr>
+		  			<th><?php echo $this->fields['club_report']; ?></th>
+		 			<th><?php echo $this->fields['date']; ?></th>
+		  			<th><?php echo $this->fields['home']; ?></th>
+		  			<th><?php echo $this->fields['guest']; ?></th>
+		  			<th><?php echo $this->fields['points']; ?></th>
+		  			<th><?php echo $this->fields['btv_report']; ?></th>
+				</tr>
+			</thead>
+			
+			<tbody>
+			<?php foreach ($this->spiele as $spiel) { ?>
+				<tr>
+		 			<td><?php if ($spiel['text']): ?><form action="" method="POST" class="form_report"><input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}"><input type="hidden" value="<?php echo $spiel['title']; ?>" name="title"><input type="submit" value="<?php echo $spiel['report_text']; ?>" class="submit_report" /></form><?php endif; ?></td>
+		 			<td><?php echo $spiel['date']; ?></td>
+		 			<td><?php echo $spiel['home']; ?></td>
+		 			<td><?php echo $spiel['guest']; ?></td>
+		 			<td><?php echo $spiel['points']; ?></td>
+		 			<td><?php if ($spiel['report']): ?><a href="<?php echo $spiel['report']; ?>" target="_blank"><?php echo $this->fields['show']; ?></a><?php endif; ?></td>
+				</tr>
+				<?php if ($spiel['show_report']): ?>
+				<tr>
+					<td colspan="6"><?php if ($spiel['image']): ?><img src="<?php echo $spiel['image']; ?>" width="300px" style="float: left; margin: 0px 10px 0px 0px"/><?php endif; ?><?php echo $spiel['text']; ?></td>
+				</tr>
+				<?php endif; ?>
+			<?php } ?>
+			</tbody>
+		</table>
+	</div>
+	<div>
+		<table class="ce_table">
+			<thead>
+				<tr>
+		 			<th><?php echo $this->fields['rank']; ?></th>
+		  			<th><?php echo $this->fields['lk']; ?></th>
+		  			<th><?php echo $this->fields['name']; ?></th>
+		  			<th><?php echo $this->fields['single']; ?></th>
+		  			<th><?php echo $this->fields['double']; ?></th>
+		  			<th><?php echo $this->fields['sum']; ?></th>
+				</tr>
+			</thead>
+			
+			<tbody>
+			<?php foreach ($this->spieler as $spieler) { ?>
+				<tr>
+		 			<td><?php echo $spieler['rank']; ?></td>
+		 			<td><?php echo $spieler['lk']; ?></td>
+		 			<td><?php echo $spieler['name']; ?></td>
+		 			<td><?php echo $spieler['single']; ?></td>
+		 			<td><?php echo $spieler['double']; ?></td>
+		 			<td><?php echo $spieler['sum']; ?></td>
+				</tr>
+			<?php } ?>
+			</tbody>
+		</table>
+	</div>
+</div>
+</div>
+</div>

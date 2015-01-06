@@ -1,0 +1,34 @@
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div>
+		<form action="" method="POST"><div class="time_frame"><input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}"/>vom <input type="text" name="fromDate" value="<?php echo $this->fromDate ?>" name="fromDate"/>  bis zum <input type="text" name="toDate" value="<?php echo $this->toDate ?>" name="toDate"/> <input type="submit" value="Aktualisieren" name="current"/></div></form>
+		<table class="ce_table">
+			<thead>
+				<tr>
+		 			<th><?php echo $this->fields['date']; ?></th>
+		 			<th><?php echo $this->fields['liga']; ?></th>
+		  			<th><?php echo $this->fields['home']; ?></th>
+		  			<th><?php echo $this->fields['guest']; ?></th>
+		  			<th><?php echo $this->fields['points']; ?></th>
+		 			<th><?php echo $this->fields['sets']; ?></th>
+		 			<th><?php echo $this->fields['games']; ?></th>
+		  			<th><?php echo $this->fields['btv_report']; ?></th>
+				</tr>
+			</thead>
+			
+			<tbody>
+			<?php foreach ($this->spiele as $spiel) { ?>
+				<tr>
+		 			<td><?php echo $spiel['date']; ?></td>
+		 			<td><?php echo $spiel['liga']; ?></td>
+		 			<td><?php echo $spiel['home']; ?></td>
+		 			<td><?php echo $spiel['guest']; ?></td>
+		 			<td><?php echo $spiel['points']; ?></td>
+		 			<td><?php echo $spiel['sets']; ?></td>
+		 			<td><?php echo $spiel['games']; ?></td>
+		 			<td><?php if ($spiel['report']): ?><a href="<?php echo $spiel['report']; ?>" target="_blank"><?php echo $this->fields['show']; ?></a><?php endif; ?></td>
+				</tr>
+			<?php } ?>
+			</tbody>
+		</table>
+	</div>
+</div>
