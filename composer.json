@@ -1,0 +1,38 @@
+{
+    "name":"Volker2014/btv_medenlist",
+    "description":"BTV Medenspiele",
+    "keywords":["contao", "btv", "meden", "spiele"],
+    "type":"contao-module",
+    "license":"LGPL-3.0+",
+    "authors":[
+        {
+            "name":"Volker Riecken",
+            "email":"",
+            "homepage":"",
+            "role":"Developer"
+        }
+    ],
+    "support":{
+        "issues":"https://github.com/Volker2014/btv_medenlist/issues",
+        "source":"https://github.com/Volker2014/btv_medenlist",
+    },
+    "require":{
+        "php":">=5.3",
+        "contao/core":">=3.2,<4",
+        "contao-community-alliance/composer-plugin": "*"  
+    },
+    "replace": {
+     },
+    "conflict": {
+     },
+    "autoload":{
+        "classmap":[""]
+    },
+    "extra":{
+        "contao":{
+            "sources":{
+                "":"system/modules/btv_medenlist"
+            }
+        }
+    }
+}
