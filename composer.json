@@ -22,8 +22,7 @@
         "contao-community-alliance/composer-plugin": "*"  
     },
     "replace": {
-        "contao-legacy/btv_medenlist":"*"
-	},
+     },
     "conflict": {
      },
     "autoload":{
