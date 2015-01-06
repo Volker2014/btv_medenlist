@@ -14,7 +14,7 @@
     ],
     "support":{
         "issues":"https://github.com/Volker2014/btv_medenlist/issues",
-        "source":"https://github.com/Volker2014/btv_medenlist",
+        "source":"https://github.com/Volker2014/btv_medenlist"
     },
     "require":{
         "php":">=5.3",
