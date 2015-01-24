@@ -100,8 +100,8 @@ class BTVClub extends \Module
 
 			$this->setListFields();
 			$this->setTimeFrame();
-			$page = sprintf($this->searchClubGamesFormat, $this->urlVerband, $this->Template->fromDate, $this->Template->toDate, $this->club_id);			
-			$dom = $this->loadHttpPage($page);
+			$this->Template->page = sprintf($this->searchClubGamesFormat, $this->urlVerband, $this->Template->fromDate, $this->Template->toDate, $this->club_id);			
+			$dom = $this->loadHttpPage($this->Template->page);
 			$tables = $dom->getElementsByTagName('tbody');
 			$spiele = array();
 			if ($tables->length > 0)

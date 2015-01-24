@@ -1,3 +1,4 @@
+<div style="visibility: hidden;"><?php echo $this->page ?></div>
 <div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 	<div>
 		<form action="" method="POST"><div class="time_frame"><input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}"/>vom <input type="text" name="fromDate" value="<?php echo $this->fromDate ?>" name="fromDate"/>  bis zum <input type="text" name="toDate" value="<?php echo $this->toDate ?>" name="toDate"/> <input type="submit" value="Aktualisieren" name="current"/></div></form>

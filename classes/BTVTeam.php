@@ -71,8 +71,8 @@ class BTVTeam extends \Module
 			$this->teamPortraitFormat = "%s/BTVToServe/abaxx-?%%24part=theLeague.content.theLeaguePublic&team=%s&championship=Mittelfranken+13&theLeaguePage=teamPortrait";
 			
 			$this->setListFields();
-			$page = sprintf($this->teamPortraitFormat, $this->urlVerband , $this->team_id);
-			$dom = $this->loadHttpPage($page);
+			$this->Template->page = sprintf($this->teamPortraitFormat, $this->urlVerband , $this->team_id);
+			$dom = $this->loadHttpPage($this->Template->page);
 			$tables = $dom->getElementsByTagName('table');
 			if ($tables->length > 0)
 			{

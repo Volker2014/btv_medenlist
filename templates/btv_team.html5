@@ -1,8 +1,9 @@
+<div style="visibility: hidden;"><?php echo $this->page ?></div>
 <div class="ce_accordionStart ce_accordion block">
 <div class="toggler"><?php echo $this->mannschaft['liga']; ?></div>
 <div class="accordion">
 <div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
-	<div><h2><a href="http://www.btv.de/<?php echo $this->mannschaft['link']; ?>" target="_blank"><?php echo $this->mannschaft['liga']; ?></a></h2></div>
+	<div><h2><a href="<?php echo $this->mannschaft['link']; ?>" target="_blank"><?php echo $this->mannschaft['liga']; ?></a></h2></div>
 	<div>
 		<table class="ce_table">
 			<thead>
