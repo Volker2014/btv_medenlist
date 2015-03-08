@@ -79,7 +79,7 @@ class BTVTeam extends \Module
 				$mannschaft = array();
 				$rows = $tables->item(0)->getElementsByTagName('tr');
 				$cols = $rows->item(1)->getElementsByTagName('td');
-				$mannschaft['liga'] = $cols->item(0)->nodeValue;
+				$mannschaft['liga'] = utf8_decode($cols->item(0)->nodeValue);
 				$mannschaft['link'] = $cols->item(0)->childNodes->item(1)->getAttribute('href');
 				$this->Template->mannschaft = $mannschaft;
 			}
@@ -108,8 +108,8 @@ class BTVTeam extends \Module
 					{
 						$spiel = array();
 						$spiel['date'] = trim($cols->item(0)->nodeValue);
-						$spiel['home'] = trim($cols->item(1)->nodeValue);
-						$spiel['guest'] = trim($cols->item(2)->nodeValue);
+						$spiel['home'] = utf8_decode(trim($cols->item(1)->nodeValue));
+						$spiel['guest'] = utf8_decode(trim($cols->item(2)->nodeValue));
 						$spiel['points'] = trim($cols->item(3)->nodeValue);
 						if ($cols->item(4)->childNodes->length > 1)
 						{
@@ -168,7 +168,7 @@ class BTVTeam extends \Module
 						$spielerNeu['rank'] = trim($cols->item(0)->nodeValue);
 						$spielerNeu['lk'] = trim($cols->item(1)->nodeValue);
 						$spielerNeu['id'] = trim($cols->item(2)->nodeValue);
-						$spielerNeu['name'] = trim($cols->item(3)->textContent);
+						$spielerNeu['name'] = utf8_decode(preg_replace('~\xc2\xa0~', ' ', trim($cols->item(3)->textContent)));
 						$spielerNeu['nation'] = trim($cols->item(4)->nodeValue);
 						$spielerNeu['sg'] = trim($cols->item(5)->nodeValue);
 						$spielerNeu['single'] = trim($cols->item(6)->nodeValue);

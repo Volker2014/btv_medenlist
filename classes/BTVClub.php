@@ -116,8 +116,8 @@ class BTVClub extends \Module
 						$datum = explode("/[\s\n]+/", trim($cols->item(0)->nodeValue));
 						$spiel['date'] = $datum[0] . " " . substr($datum[1], 0, -5) . " " . substr($datum[1], -5);
 						$spiel['liga'] = trim($cols->item(1)->nodeValue);						
-						$spiel['home'] = trim(str_replace("[Routenplan]", "", $cols->item(2)->nodeValue));
-						$spiel['guest'] = trim($cols->item(3)->nodeValue);
+						$spiel['home'] = utf8_decode(trim(str_replace("[Routenplan]", "", $cols->item(2)->nodeValue)));
+						$spiel['guest'] = utf8_decode(trim($cols->item(3)->nodeValue));
 						$spiel['points'] = trim($cols->item(4)->nodeValue);
 						$spiel['sets'] = trim($cols->item(5)->nodeValue);
 						$spiel['games'] = trim($cols->item(6)->nodeValue);
